@@ -1,18 +1,22 @@
-# Jeu Tic Tac Toe en Java
+# Java Tic Tac Toe Game
 
-Ce jeu est une implémentation simple du Tic Tac Toe en ligne de commande, développé en Java. Deux joueurs, représentés par 'X' et 'O', effectuent des tours pour placer leurs symboles sur un tableau de 3x3. Le jeu se poursuit jusqu'à ce qu'un joueur gagne ou que le jeu se termine par une égalité.
+This is a simple command-line implementation of Tic Tac Toe, developed in Java. Two players, represented by 'X' and 'O', take turns to place their symbols on a 3x3 board. The game continues until a player wins or it ends in a draw.
 
-## Comment jouer
+## How to Play
 
-1. Clonez ou téléchargez ce dépôt sur votre machine locale.
+1. Clone or download this repository to your local machine.
 
-2. Compilez le code source Java :
+2. Compile the Java source code:
+
    ```shell
    javac src/javaGame.java
-Lancez le jeu :
+   ```
+   Run the game:
+   
    ```shell
-java src.javaGame
+   java src/javaGame.java
+   ```
+   
+The game board is displayed with numbers representing empty slots. Players choose a location by entering a number (1 to 9).
 
-Le tableau de jeu s'affiche avec des chiffres représentant les emplacements vides. Les joueurs choisissent un emplacement en entrant un chiffre (de 1 à 9).
-
-Le jeu se poursuit jusqu'à ce qu'un joueur gagne ou que le jeu se termine par une égalité. Le vainqueur est affiché à la fin du jeu.
+Play continues until one player wins or the game ends in a tie. The winner is displayed at the end of the game.
