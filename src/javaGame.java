@@ -53,8 +53,7 @@ public class javaGame {
 
     System.out.println("Welcome to 3x3 Tic Tac Toe.");
 
-    while (winner.equals("" +
-            "")) { // Main game loop
+    while (winner.equals("")) { // Main game loop
       System.out.println("Choose a number:");
       printBoard();
       if (turn % 2 == 0) {
