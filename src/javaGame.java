@@ -1,32 +1,30 @@
 import java.util.Scanner;
 
 public class javaGame {
+
   static String[] board = new String[9]; // Initialize the game board
   static String winner = ""; // Initialize the winner variable
   static String player = ""; // Initialize the current player variable
 
   static void checkWinner() {
     for (int a = 0; a < 8; a++) { // Loop to check all possible combinations
-      String line = switch (a) {
-        case 0 -> board[0] + board[1] + board[2];
-        case 1 -> board[3] + board[4] + board[5];
-        case 2 -> board[6] + board[7] + board[8];
-        case 3 -> board[0] + board[3] + board[6];
-        case 4 -> board[1] + board[4] + board[7];
-        case 5 -> board[2] + board[5] + board[8];
-        case 6 -> board[0] + board[4] + board[8];
-        case 7 -> board[2] + board[4] + board[6];
-        default -> null;
-      };
+      String line =
+        switch (a) {
+          case 0 -> board[0] + board[1] + board[2];
+          case 1 -> board[3] + board[4] + board[5];
+          case 2 -> board[6] + board[7] + board[8];
+          case 3 -> board[0] + board[3] + board[6];
+          case 4 -> board[1] + board[4] + board[7];
+          case 5 -> board[2] + board[5] + board[8];
+          case 6 -> board[0] + board[4] + board[8];
+          case 7 -> board[2] + board[4] + board[6];
+          default -> null;
+        };
 
-      if (winner.equalsIgnoreCase("draw")) { // If it's a draw
-        System.out.println("It's a draw!");
-      }
       // For X winner
-      else if (line.equals("XXX")) {
+      if (line.equals("XXX")) {
         winner = player;
       }
-
       // For O winner
       else if (line.equals("OOO")) {
         winner = player;
@@ -37,7 +35,9 @@ public class javaGame {
   static void printBoard() {
     System.out.println("|---|---|---|");
     for (int i = 0; i < 9; i += 3) {
-      System.out.println("| " + board[i] + " | " + board[i + 1] + " | " + board[i + 2] + " |");
+      System.out.println(
+        "| " + board[i] + " | " + board[i + 1] + " | " + board[i + 2] + " |"
+      );
       System.out.println("|---|---|---|");
     }
   }
@@ -77,7 +77,9 @@ public class javaGame {
             turn++;
             checkWinner(); // Check if there's a winner
           } else {
-            System.out.println("That spot is already taken. Choose a different one.");
+            System.out.println(
+              "That spot is already taken. Choose a different one."
+            );
           }
         } else {
           System.out.println("Choose a valid number (1 to 9).");
@@ -91,9 +93,7 @@ public class javaGame {
     }
 
     printBoard();
-    if (winner.equals("draw")) {
-      System.out.println("It's a draw!");
-    } else {
+    if (!winner.isEmpty()) {
       System.out.println("The winner is " + winner);
     }
   }
